@@ -1,0 +1,5 @@
+{
+  "name": "Seqüenciació de la CDA",
+  "description": "Aplicació per a docents que ajuda a construir la seqüenciació de la Competència Digital de l'Alumnat (CDA) seguint el model del Departament d'Educació, tenint en compte els robots, plaques, màquines maker, maleta audiovisual i dispositius de cada centre",
+  "requestFramePermissions": []
+}
