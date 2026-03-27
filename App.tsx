@@ -396,6 +396,8 @@ const App: React.FC = () => {
     setError(null);
     try {
       const res = await generateCDASequencing(state);
+      // Set the title according to user request: Seqüenciació promoció [Any] [Cicle]
+      res.titol = `Seqüenciació promoció ${state.title} ${state.cycle}`;
       setResult(res);
       setStep(3);
     } catch (err: any) {
@@ -478,14 +480,14 @@ const App: React.FC = () => {
             <div className="flex flex-col md:flex-row justify-between items-center gap-6 border-b pb-8">
                 <h2 className="text-3xl font-black flex items-center gap-4 text-slate-800">
                     <span className="w-12 h-12 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-xl shadow-lg">1</span>
-                    Cicle i Títol
+                    Promoció i Cicle
                 </h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div>
-                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 italic">Títol de la Seqüenciació</label>
+                  <label className="block text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3 italic">Any de la promoció</label>
                   <input type="text" className="w-full p-5 bg-slate-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-indigo-500 focus:shadow-xl outline-none transition-all font-bold text-lg" placeholder="Ex: Seqüenciació 2025-26..." value={state.title} onChange={e => setState({...state, title: e.target.value})} />
                 </div>
                 <div>

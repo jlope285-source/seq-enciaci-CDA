@@ -14,7 +14,7 @@ const KITS_COMPONENTS = {
 
 // Generate a CDA Sequencing using Gemini 3.1 Pro
 export const generateCDASequencing = async (state: SelectionState): Promise<CDASequencing> => {
-  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   const cycleData = CDA_DATA[state.cycle];
   
   const toolsInfo: string[] = [];
